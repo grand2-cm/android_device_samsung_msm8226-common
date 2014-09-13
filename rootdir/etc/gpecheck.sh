@@ -8,8 +8,8 @@ FSTYPE=`/sbin/bbx blkid $BDEV | /sbin/bbx cut -d ' ' -f3 | /sbin/bbx cut -d '"' 
 
 if [ "$FSTYPE" == "ext4" ]
 then
-  /sbin/bbx cp -f /recovery.fstab /etc/recovery.fstab
-  /sbin/bbx mv -f /recovery.fstab /fstab.qcom
+  /sbin/bbx cp -f /gpe-fstab.qcom /etc/recovery.fstab
+  /sbin/bbx mv -f /gpe-fstab.qcom /fstab.qcom
 else
-  /sbin/bbx rm /recovery.fstab
+  /sbin/bbx rm /gpe-fstab.qcom
 fi
